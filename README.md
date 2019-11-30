@@ -20,12 +20,12 @@ inserting the selected path (in various ways), which makes it fast to
 launch and ideal for the task. Not using the whole terminal can be
 viewed as an another feature.
 
-Pros:  
+Pros:
 * Launches much faster.
 * Better shell integration.
 * Retains the terminal contents and only uses a small part of the terminal.
 
-Cons:  
+Cons:
 * Offers only a small subset of `ranger's` features.
 * Needs `zsh`.
 
@@ -53,8 +53,8 @@ parentheses):
 * `page_up` (<kbd>K</kbd>) -- Five items up.
 * `enter` (<kbd>l</kbd>) -- Enter the selected directory.
 * `leave` (<kbd>h</kbd>) -- Leave the current directory (one directory up).
-* `next_parent` (<kbd>]</kbd>) -- One item down in the left column.
-* `prev_parent` (<kbd>[</kbd>) -- One item up in the left column.
+* `next_parent` (<kbd>)</kbd>) -- One item down in the left column.
+* `prev_parent` (<kbd>(</kbd>) -- One item up in the left column.
 * `search` (<kbd>/</kbd>) -- Select the first file matching the given pattern.
 * `filter` (<kbd>f</kbd>) -- Shows only files matching the given pattern.
 * `toggle_hidden` (<kbd>H</kbd>) -- Show/hide the hidden files.
@@ -63,11 +63,7 @@ parentheses):
 * `append_abs_path` (<kbd>A</kbd>) -- Absolute path version.
 * `insert_path` (<kbd>i</kbd>) -- Insert the current path and leave the cursor on its left.
 * `insert_abs_path` (<kbd>I</kbd>) -- Absolute path version.
-* `multi_insert_dwim` (<kbd>s</kbd>) -- Insert the current path, add a smart separator using the last character before the cursor (unless it's an opening brace, then use a comma), move the cursor down and don't quit yet.
-* `multi_insert_abs` (<kbd>S</kbd>) -- Insert the current absolute path and don't quit yet.
-* `chdir` (<kbd>c</kbd>) -- `cd` into the current directory and quit.
-* `chdir_selected` (<kbd>C</kbd>) -- `cd` into the selected directory and quit.
-* `rifle` (<kbd>r</kbd>) -- Run `rifle(1)` on the selected file.
+
 
 To bind a function to a different key, add something like this to your
 `.zshrc`:
