@@ -151,6 +151,20 @@ deer-mark-file-list()
         | grep -Fx -B5 -A$DEER_HEIGHT -- "$MARKED" \
         | perl -pe 'BEGIN{$name = shift}
                     if ($name."\n" eq $_) {
+                        $_="=> $_"
+                    } else {
+                        $_="   $_"
+                    }' -- "$MARKED"
+}
+deer-mark-parent-file-list()
+{
+    local MARKED=$1
+    shift
+
+    print -l -- "$@" \
+        | grep -Fx -B5 -A$DEER_HEIGHT -- "$MARKED" \
+        | perl -pe 'BEGIN{$name = shift}
+                    if ($name."\n" eq $_) {
                         $_="-> $_"
                     } else {
                         $_="   $_"
@@ -183,7 +197,7 @@ deer-refresh()
 
     local IFS=$'\n'
     FILES=($(deer-mark-file-list "$DEER_BASENAME[$DEER_DIRNAME]" $FILES))
-    PARENTFILES=($(deer-mark-file-list "$DEER_DIRNAME:t" $PARENTFILES))
+    PARENTFILES=($(deer-mark-parent-file-list "$DEER_DIRNAME:t" $PARENTFILES))
     unset IFS
 
     FILES=(${(F)FILES[1,$DEER_HEIGHT]})
